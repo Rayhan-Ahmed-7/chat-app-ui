@@ -1,0 +1,143 @@
+:root {
+    --fs-1: 2rem;
+    --primary-color: #ff4778;
+    --bg-color: #f3effe;
+    --color: #36174d;
+}
+
+.dark {
+    --fs-1: 2rem;
+    --primary-color: #6f36bc;
+    --bg-color: #36174d;
+    --color: #f3effe;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    display: grid;
+    place-items: center;
+    height: 100vh;
+}
+
+ul li {
+    list-style: none;
+    cursor: pointer;
+}
+
+ul {
+    padding: 0;
+}
+
+p {
+    margin: 0;
+}
+
+.container {
+    width: 400px;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #36174d;
+}
+
+.nav {
+    display: flex;
+    color: white;
+    position: relative;
+    width: 350px;
+}
+
+.nav li.active~.indicator {}
+
+.nav li i {
+    font-size: 30px;
+    transition: all .3s ease;
+}
+
+.nav li.active i {
+    transform: translateY(-35px);
+}
+
+.nav li.active p {
+    opacity: 1;
+    transform: translateY(10px);
+
+}
+
+.nav li p {
+    position: absolute;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all .3s ease;
+
+}
+
+.indicator {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    box-sizing: border-box;
+    background-color: rgb(247, 235, 63);
+    position: absolute;
+    top: -50%;
+    border: 6px solid #fff;
+    transition: all .3s ease;
+}
+
+.nav li:nth-child(1).active~.indicator {
+    transform: translateX(calc(70px * 0));
+}
+
+.nav li:nth-child(2).active~.indicator {
+    transform: translateX(calc(70px * 1));
+}
+
+.nav li:nth-child(3).active~.indicator {
+    transform: translateX(calc(70px * 2));
+}
+
+.nav li:nth-child(4).active~.indicator {
+    transform: translateX(calc(70px * 3));
+}
+
+.nav li:nth-child(5).active~.indicator {
+    transform: translateX(calc(70px * 4));
+}
+
+.indicator::before {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 50%;
+    left: -22px;
+    border-top-right-radius: 20px;
+    background-color: transparent;
+    box-shadow: 0px -10px 0 0 #fff;
+}
+
+.indicator::after {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 50%;
+    right: -22px;
+    border-top-left-radius: 20px;
+    background-color: transparent;
+    box-shadow: 0px -10px 0 0 #fff;
+}
+
+.nav li {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 70px;
+    height: 70px;
+    z-index: 1;
+}
