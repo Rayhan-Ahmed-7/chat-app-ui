@@ -108,11 +108,13 @@ img {
 *{
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 body {
  background-color: var(--body-bg-color);
  font-family: var(--font-manrope);
+ height: 100vh;
 }
 
 html {
@@ -126,4 +128,31 @@ ul li{
 }
 a{
   text-decoration: none;
+}
+
+
+   /* Nav */
+.nav,.chat_box,.chat_info,.chat_list{
+  height: 100%;
+}
+.nav{
+  /* background-color: #131517; */
+  width: 80px;
+}
+.chat_list{
+  background-color: #1C1D22;
+  flex-basis: 20%;
+}
+.chat_box{
+  background-color: #296FFF;
+  flex-grow: 1;
+}
+.chat_info{
+  background-color: #3BAF6D;
+  flex-basis: 20%;
+}
+
+.container{
+  display: flex;
+  height: 100%;
 }
